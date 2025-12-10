@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Brooks Built Marketing Website
 
-## Getting Started
+A modern, futuristic marketing website built with Next.js 14, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern Design**: Futuristic design with animated gradients, glassmorphism, and glow effects
+- **Fully Responsive**: Optimized for mobile, tablet, and desktop
+- **SEO Optimized**: Comprehensive meta tags and structured data
+- **Fast Performance**: Static site generation for optimal speed
+- **Smooth Animations**: Framer Motion for professional animations
+- **6 Pages**: Home, About, Services, Portfolio (coming soon), Testimonials (coming soon), Contact
+
+## 📋 Pages
+
+- **Home**: Hero section, services overview, why choose us, process, testimonials preview
+- **About**: Company story, mission & vision, core values, differentiators
+- **Services**: Comprehensive breakdown of all marketing services
+- **Portfolio**: Coming soon structure for case studies
+- **Testimonials**: Coming soon structure for client reviews
+- **Contact**: Contact form (Fillout.com), Google Maps, contact information
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router with static export)
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Fonts**: Space Grotesk (headings), Inter (body)
+- **Deployment**: Heroku-ready with Express.js server
+
+## 🏃 Getting Started
+
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build the static site
+npm run build
 
-## Learn More
+# Test the production build locally
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Deployment to Heroku
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
+- Heroku CLI installed
+- Heroku account
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Steps
 
-## Deploy on Vercel
+1. **Initialize Git** (if not already done):
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Create Heroku App**:
+```bash
+heroku create brooks-built-marketing
+# Or: heroku create (generates random name)
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Set Node.js Buildpack**:
+```bash
+heroku buildpacks:set heroku/nodejs
+```
+
+4. **Deploy**:
+```bash
+git push heroku main
+```
+
+5. **Open Your Site**:
+```bash
+heroku open
+```
+
+## ⚙️ Configuration
+
+### Update Fillout Form
+
+1. Get your Fillout form ID from fillout.com
+2. Edit `/components/contact/FilloutForm.js`
+3. Replace `'YOUR_FILLOUT_FORM_ID'` with your actual form ID
+
+### Update Google Maps
+
+1. Go to Google Maps and search for your address
+2. Click "Share" → "Embed a map"
+3. Copy the iframe src URL
+4. Update `/components/contact/GoogleMap.js` with the new URL
+
+### Update Company Information
+
+Edit `/data/company.js` to update:
+- Contact information
+- Social media links
+- Business hours
+- About content
+
+### Update Services
+
+Edit `/data/services.js` to customize:
+- Service offerings
+- Stats and metrics
+- Service descriptions
+
+## 🎨 Brand Colors
+
+- **Beige**: #D4C5B0 (from logo)
+- **Charcoal**: #2B2B2B (from logo)
+- **Electric Blue**: #00D9FF (accent, CTAs)
+- **Deep Navy**: #0A0E27 (dark backgrounds)
+
+## 📁 Project Structure
+
+```
+brooks-built-marketing/
+├── app/                    # Next.js pages
+│   ├── about/
+│   ├── contact/
+│   ├── portfolio/
+│   ├── services/
+│   ├── testimonials/
+│   ├── layout.js
+│   ├── page.js
+│   └── globals.css
+├── components/             # React components
+│   ├── contact/
+│   ├── home/
+│   ├── layout/
+│   └── shared/
+├── data/                   # Content data
+│   ├── company.js
+│   ├── navigation.js
+│   └── services.js
+├── public/                 # Static assets
+│   └── images/
+├── server.js              # Express server for Heroku
+├── next.config.mjs        # Next.js configuration
+├── package.json
+├── Procfile              # Heroku deployment
+└── README.md
+```
+
+## 🔄 Future Enhancements
+
+- Add real case studies to Portfolio page
+- Add client testimonials to Testimonials page
+- Implement Google Analytics
+- Add blog functionality (optional)
+- Set up custom domain
+
+## 📧 Contact
+
+**Brooks Built Marketing**
+- Phone: 832-302-5309
+- Email: trey@brooksbuiltmarketing.com
+- Address: 20228 Schiel Rd, Cypress, TX 77433
+
+## 📄 License
+
+© 2024 Brooks Built Marketing. All rights reserved.
