@@ -134,3 +134,10 @@
     .testimonials-grid { grid-template-columns: 1fr; }
     .testimonial-card.featured { grid-column: span 1; }
 }
+/* === CARD STAR RATINGS === */
+.card-stars {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #f5a623;
+    letter-spacing: 2px;
+}
