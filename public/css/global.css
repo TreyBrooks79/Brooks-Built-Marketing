@@ -59,6 +59,11 @@ body::after {
     backdrop-filter: blur(24px) saturate(180%);
     border-bottom: 1px solid var(--border);
     z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.nav-hidden {
+    transform: translateY(-100%);
 }
 
 .nav-inner {
@@ -103,8 +108,9 @@ body::after {
     transition: width 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active { color: white; }
+.nav-links a:hover, .nav-links a.active { color: white; cursor: pointer; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover { text-shadow: 0 0 12px rgba(196,181,169,0.4); }
 
 .nav-cta {
     background: var(--gradient) !important;
@@ -270,7 +276,9 @@ body::after {
 .card:hover {
     border-color: var(--border-hover);
     transform: translateY(-6px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-glow), 0 0 40px rgba(196,181,169,0.15);
+    cursor: pointer;
+    background: var(--bg-card-hover);
 }
 
 .card:hover::before { opacity: 1; }

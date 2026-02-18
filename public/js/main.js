@@ -32,14 +32,23 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Nav shadow on scroll
+// Hide nav on scroll down, show on scroll up
+let lastScrollY = 0;
 let ticking = false;
+const nav = document.querySelector('.nav');
+
 window.addEventListener('scroll', () => {
     if (!ticking) {
         requestAnimationFrame(() => {
-            const nav = document.querySelector('.nav');
-            nav.style.borderBottomColor = window.scrollY > 20
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+            nav.style.borderBottomColor = currentScrollY > 20
                 ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.04)';
+            lastScrollY = currentScrollY;
             ticking = false;
         });
         ticking = true;
