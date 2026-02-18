@@ -70,8 +70,10 @@
 
 .feature-item:hover {
     border-color: var(--border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow), 0 0 40px rgba(196,181,169,0.15);
+    cursor: pointer;
+    background: var(--bg-card-hover);
 }
 
 .feature-item .fi-icon {
@@ -121,8 +123,10 @@
 
 .process-step:hover {
     border-color: var(--border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow), 0 0 40px rgba(196,181,169,0.15);
+    cursor: pointer;
+    background: var(--bg-card-hover);
 }
 
 .step-num {

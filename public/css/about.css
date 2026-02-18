@@ -28,8 +28,9 @@
 
 .mission-card:hover {
     border-color: var(--border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow), 0 0 40px rgba(196,181,169,0.15);
+    background: var(--bg-card-hover);
 }
 
 .mc-icon {
@@ -85,7 +86,8 @@
 .value-card:hover {
     border-color: var(--border-hover);
     transform: translateY(-6px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-glow), 0 0 40px rgba(196,181,169,0.15);
+    background: var(--bg-card-hover);
 }
 
 .value-card:hover::before { opacity: 1; }
